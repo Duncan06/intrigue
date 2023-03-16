@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+Artisan::command('test', function() {
+    Process::run('npm run build', function ($type, $output) {
+        $this->info($output);
+    });
+});
